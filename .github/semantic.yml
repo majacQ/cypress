@@ -1,2 +1,4 @@
-# Always validate the PR title, and ignore the commits
+Always validate the PR title and the commits
 titleOnly: true
+ 
+ 
