@@ -1,11 +1,11 @@
-<p align="center">
+<h1> 
   <img src="https://cloud.githubusercontent.com/assets/1268976/20607953/d7ae489c-b24a-11e6-9cc4-91c6c74c5e88.png"/>
-</p>
-<p align="center">
+</1>
+<h2 align="center">
   <a href="https://on.cypress.io">Documentation</a> |
   <a href="https://on.cypress.io/changelog">Changelog</a> |
   <a href="https://on.cypress.io/roadmap">Roadmap</a>
-</p>
+</2>
 
 <h3 align="center">
   The web has evolved. Finally, testing has too.
@@ -31,7 +31,7 @@
 </p>
 
 ## What is Cypress?
-
+Cyppress is an Open Source test runner built for the modern web! Visualize just a glimpse of capabilities in this video:
 <p align="center">
   <a href="https://player.vimeo.com/video/237527670">
     <img alt="Why Cypress Video" src="https://user-images.githubusercontent.com/1271364/31739717-dbdff0ee-b41c-11e7-9b16-bfa1b6ac1814.png" width="75%" height="75%" />
@@ -76,4 +76,5 @@ Let the world know your project is using Cypress.io to test with this cool badge
 
 ```
 [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
-```
+``` 
+  
