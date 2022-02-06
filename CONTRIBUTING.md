@@ -135,8 +135,8 @@ When an issue is opened in [cypress](https://github.com/cypress-io/cypress), we 
 Some opened issues are questions, not bug reports or feature requests. Issues are reserved for potential bugs or feature requests *only*. If this is the case, you should:
 
 - Explain that issues in our GitHub repo are reserved for potential bugs or feature requests and that the issue will be closed since it appears to be neither a bug nor a feature request.
-- Guide them to existing resources where their questions can be asked like our [Discussions](https://github.com/cypress-io/cypress/discussions), [community chat](https://on.cypress.io/chat), [Discord](https://on.cypress.io/discord),, or [Stack Overflow](https://stackoverflow.com/questions/tagged/cypress).
-- Cypress offers support via email when signing up for any of our our [paid plans](https://www.cypress.io/pricing/), so remind them that this is an option if they already have a paid account.
+- Guide them to existing resources where their questions can be asked like our [Discussions](https://github.com/cypress-io/cypress/discussions), [community chat](https://on.cypress.io/chat), [Discord](https://on.cypress.io/discord), or [Stack Overflow](https://stackoverflow.com/questions/tagged/cypress).
+- Cypress offers support via email when signing up for any of our [paid plans](https://www.cypress.io/pricing/), so remind them that this is an option if they already have a paid account.
 - Move the issue to [Discussions](https://github.com/cypress-io/cypress/discussions).
 
 ### Does this issue belong in this repository?
@@ -219,7 +219,7 @@ The best way to determine the validity of a bug is to recreate it yourself. Foll
 If you can recreate the bug you should:
 
 - Thank them for their contribution.
-- Explain that you're' able to recreate the bug. Provide the exact test code ran and the versions of Cypress, OS, and browser you used to recreate it.
+- Explain that you're able to recreate the bug. Provide the exact test code ran and the versions of Cypress, OS, and browser you used to recreate it.
 - If you know where the code is that could possibly fix this issue - link to the file or line of code from the [cypress](https://github.com/cypress-io/cypress) repo and remind the user that we are open source and that we gladly accept PRs, even if they are a work in progress.
 - Add the `stage: ready for work` label to the issue.
 
@@ -281,7 +281,7 @@ Here is a list of the core packages in this repository with a short description,
  | [extension](./packages/extension)     | `@packages/extension`   | The Cypress Chrome browser extension                                         |
  | [https-proxy](./packages/https-proxy) | `@packages/https-proxy` | This does https proxy for handling http certs and traffic.                   |
  | [net-stubbing](./packages/net-stubbing) | `@packages/net-stubbing` | Contains server side code for Cypress' network stubbing features.         |
- | [network](./packages/networ )         | `@packages/network`     | Various utilities related to networking.                                     |
+ | [network](./packages/network)         | `@packages/network`     | Various utilities related to networking.                                     |
  | [proxy](./packages/proxy)             | `@packages/proxy`       | Code for Cypress' network proxy layer.                                       |
  | [launcher](./packages/launcher)       | `@packages/launcher`    | Finds and launches browsers installed on your system.                        |
  | [reporter](./packages/reporter)       | `@packages/reporter`    | The reporter shows the running results of the tests (The Command Log UI).    |
@@ -327,10 +327,6 @@ The project utilizes [yarn workspaces](https://yarnpkg.com/lang/en/docs/workspac
 > **⚠ Running on Windows?**
 >
 > Many of the NPM scripts used during development use commands designed for a Linux-like shell.If you are running a Windows operating system, you may encounter many commands that are not working. To fix this behavior, you have to set a Linux-like shell as the default `npm` script shell. If you have Git for Windows installed, you can set Git Bash as the default script shell by using the following command:
-> ```bash
-> yarn config set script-shell "C:\\Program Files (x86)\\git\\bin\\bash.exe"
-> ```
-> Git Bash may be installed in `Program Files`, if so, use the following command:
 >```bash
 > yarn config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"
 >```
@@ -396,6 +392,7 @@ By default, top level tasks will execute for all packages. However, most scripts
 | `test-unit`        | Run unit tests                                                   |
 | `test-integration` | Run integration tests                                            |
 | `test-e2e`         | Run end-to-end tests                                             |
+| `test-system`      | Run system tests                                                 |
 | `test-watch`       | Run unit tests and rebuild/rerun on file changes                 |
 
 > Most of the time you will only want to run a task within a specific package; this can be done by providing the package name as a scope to the top level task.
@@ -428,7 +425,6 @@ Each package is responsible for building itself and testing itself and can do so
 | `test`             | Runs all tests once (this usually means running unit tests; via `yarn test-unit`)                                                                        |
 | `test-unit`        | Run all unit tests within the package; `exit 0` if N/A                                                                                                   |
 | `test-integration` | Run all integration tests within the package; `exit 0` if N/A                                                                                            |
-| `test-e2e`         | Run all e2e tests within the package; `exit 0` if N/A                                                                                                    |
 | `test-watch`       | Run all unit tests in the package in watch mode                                                                                                          |
 
 #### Debugging
@@ -486,11 +482,11 @@ This is to ensure that links do not go dead in older versions of Cypress when th
 
 For most packages there are typically unit and integration tests.
 
-Our true e2e tests are in [`packages/server`](packages/server), which test the full stack all together.
+Please refer to each packages' `README.md` which documents how to run tests. It is not feasible to try to run all of the tests together. We run our entire test fleet across over a dozen containers in CI.
+
+There are also a set of system tests in [`system-tests`](system-tests) which attempt to test the entire Cypress App as close to real world as possible. See  the [`README`](system-tests/README.md) for more information.
 
 Additionally, we test the code by running it against various other example projects in CI. See CI badges and links at the top of this document.
-
-Please refer to each packages' `README.md` which documents how to run tests. It is not feasible to try to run all of the tests together. We run our entire test fleet across over a dozen containers in CI.
 
 If you're curious how we manage all of these tests in CI check out our [`circle.yml`](circle.yml) file found in the root `cypress` directory.
 
@@ -573,6 +569,8 @@ Independent packages are automatically released when code is merged into `master
   ![Select release for PR](https://user-images.githubusercontent.com/1271364/135139641-657015d6-2dca-42d4-a4fb-16478f61d63f.png)
 - Please check the "Allow edits from maintainers" checkbox when submitting your PR. This will make it easier for the maintainers to make minor adjustments, to help with tests or any other changes we may need.
 ![Allow edits from maintainers checkbox](https://user-images.githubusercontent.com/1271181/31393427-b3105d44-ada9-11e7-80f2-0dac51e3919e.png)
+- After the PR is approved, the original contributor can merge the PR (if the original contributor has access).
+- When you merge a PR into `develop`, select [**Squash and merge**](https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits). This will squash all commits into a single commit. *The only exception to squashing is when converting files to another language and there is a clear commit history needed to maintain from the file conversion.*
 
 ### Dependencies
 
@@ -652,7 +650,7 @@ Below are some guidelines Cypress uses when reviewing dependency updates.
 
 ## Deployment
 
-We will try to review and merge pull requests quickly. If you want to know our build process or build your own Cypress binary, read [DEPLOY.md](./DEPLOY.md).
+We will try to review and merge pull requests quickly. If you want to know our build process or build your own Cypress binary, read [the "Release Process" guide](./guides/release-process.md).
 
 Independent packages are deployed immediately upon being merged into master. You can read more [above](#independent-packages-ci-workflow).
 

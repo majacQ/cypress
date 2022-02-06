@@ -1,3 +1,24 @@
+# [@cypress/vite-dev-server-v2.2.2](https://github.com/cypress-io/cypress/compare/@cypress/vite-dev-server-v2.2.1...@cypress/vite-dev-server-v2.2.2) (2021-12-16)
+
+
+### Bug Fixes
+
+* check the port is avail on all local hosts ([#19402](https://github.com/cypress-io/cypress/issues/19402)) ([4826175](https://github.com/cypress-io/cypress/commit/4826175040bfc024a36df47dc0c74f2871fa944f))
+
+# [@cypress/vite-dev-server-v2.2.1](https://github.com/cypress-io/cypress/compare/@cypress/vite-dev-server-v2.2.0...@cypress/vite-dev-server-v2.2.1) (2021-11-19)
+
+
+### Bug Fixes
+
+* compile npm packages for node 12 ([#18989](https://github.com/cypress-io/cypress/issues/18989)) ([30b3eb2](https://github.com/cypress-io/cypress/commit/30b3eb2376bc1ed69087ba96f60448687e8489e6))
+
+# [@cypress/vite-dev-server-v2.2.0](https://github.com/cypress-io/cypress/compare/@cypress/vite-dev-server-v2.1.1...@cypress/vite-dev-server-v2.2.0) (2021-10-15)
+
+
+### Features
+
+* normalized signatures webpack & vite servers ([#18379](https://github.com/cypress-io/cypress/issues/18379)) ([8f5308f](https://github.com/cypress-io/cypress/commit/8f5308f7068b80fb877da539ce34fb67ba497c4f))
+
 # [@cypress/vite-dev-server-v2.1.1](https://github.com/cypress-io/cypress/compare/@cypress/vite-dev-server-v2.1.0...@cypress/vite-dev-server-v2.1.1) (2021-10-04)
 
 

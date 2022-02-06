@@ -1,10 +1,10 @@
 require('../../spec_helper')
 
+const _ = require('lodash')
 const Promise = require('bluebird')
 const electron = require('electron')
 const stripAnsi = require('strip-ansi')
 const snapshot = require('snap-shot-it')
-const R = require('ramda')
 const pkg = require('@packages/root')
 const { fs } = require(`${root}../lib/util/fs`)
 const user = require(`${root}../lib/user`)
@@ -662,6 +662,7 @@ describe('lib/modes/run', () => {
       sinon.stub(random, 'id').returns(1234)
       sinon.stub(openProject, 'create').resolves(openProject)
       sinon.stub(runMode, 'waitForSocketConnection').resolves()
+      sinon.stub(fs, 'access').resolves()
       sinon.stub(runMode, 'waitForTestsToFinishRunning').resolves({
         stats: { failures: 10 },
         spec: {},
@@ -736,6 +737,7 @@ describe('lib/modes/run', () => {
 
       sinon.stub(electron.app, 'on').withArgs('ready').yieldsAsync()
       sinon.stub(user, 'ensureAuthToken')
+      sinon.stub(fs, 'access').resolves()
       sinon.stub(random, 'id').returns(1234)
       sinon.stub(openProject, 'create').resolves(openProject)
       sinon.stub(system, 'info').resolves({ osName: 'osFoo', osVersion: 'fooVersion' })
@@ -808,6 +810,21 @@ describe('lib/modes/run', () => {
       })
     })
 
+    it('passes exit from config to waitForTestsToFinishRunning', function () {
+      this.projectInstance.getConfig.restore()
+      sinon.stub(this.projectInstance, 'getConfig').resolves({
+        proxyUrl: 'http://localhost:12345',
+        exit: false,
+      })
+
+      return runMode.run()
+      .then(() => {
+        expect(runMode.waitForTestsToFinishRunning).to.be.calledWithMatch({
+          exit: false,
+        })
+      })
+    })
+
     it('passes headed to openProject.launch', () => {
       const browser = { name: 'electron', family: 'chromium' }
 
@@ -860,7 +877,7 @@ describe('lib/modes/run', () => {
     // for some reason I cannot stub property value using Sinon
     let version
     // save a copy of "true" experiments right away
-    const names = R.clone(experimental.names)
+    const names = _.cloneDeep(experimental.names)
 
     before(() => {
       // reset experiments names before each test
