@@ -1,3 +1,68 @@
+# [@cypress/react-v5.10.1](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.10.0...@cypress/react-v5.10.1) (2021-10-04)
+
+
+### Bug Fixes
+
+* configure proper pages directory for next application ([#18009](https://github.com/cypress-io/cypress/issues/18009)) ([70c7c36](https://github.com/cypress-io/cypress/commit/70c7c3678180d5408c144fa37f94ba5f5f8ceeb8))
+* next trace error ([#18189](https://github.com/cypress-io/cypress/issues/18189)) ([db6f909](https://github.com/cypress-io/cypress/commit/db6f9096bd6668db1937d0e38d3928866f6cd5df))
+
+# [@cypress/react-v5.10.0](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.9.4...@cypress/react-v5.10.0) (2021-09-10)
+
+
+### Features
+
+* allow usage of @react/plugins with cypress.config.js ([#17738](https://github.com/cypress-io/cypress/issues/17738)) ([da4b1e0](https://github.com/cypress-io/cypress/commit/da4b1e06ce33945aabddda0e6e175dc0e1b488a5))
+
+# [@cypress/react-v5.9.4](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.9.3...@cypress/react-v5.9.4) (2021-08-10)
+
+
+### Bug Fixes
+
+* do not throw when alt path is found in next ([#17658](https://github.com/cypress-io/cypress/issues/17658)) ([ee7e203](https://github.com/cypress-io/cypress/commit/ee7e203fa059efeac45c7a18526e563643e76d77)), closes [#17476](https://github.com/cypress-io/cypress/issues/17476)
+
+# [@cypress/react-v5.9.3](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.9.2...@cypress/react-v5.9.3) (2021-08-03)
+
+
+### Bug Fixes
+
+* plugin for next 11.0.2 moved webpack-config ([#17529](https://github.com/cypress-io/cypress/issues/17529)) ([130c086](https://github.com/cypress-io/cypress/commit/130c0864e786ae5172f2c70fdc86664dcaf93083)), closes [#17519](https://github.com/cypress-io/cypress/issues/17519) [#17476](https://github.com/cypress-io/cypress/issues/17476)
+
+# [@cypress/react-v5.9.2](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.9.1...@cypress/react-v5.9.2) (2021-07-20)
+
+
+### Bug Fixes
+
+* improve React `mountHook` type ([#17241](https://github.com/cypress-io/cypress/issues/17241)) ([e40969a](https://github.com/cypress-io/cypress/commit/e40969abe39424585fd2075b17e4e7d189f53c3a))
+
+# [@cypress/react-v5.9.1](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.9.0...@cypress/react-v5.9.1) (2021-06-04)
+
+
+### Bug Fixes
+
+* **cypress/react:** add default webpack config path ([#16813](https://github.com/cypress-io/cypress/issues/16813)) ([0348170](https://github.com/cypress-io/cypress/commit/03481703c997088a3e7ef5ed3b55d9fee01821a0))
+* **npm/react:** webpack config sample bug ([#16737](https://github.com/cypress-io/cypress/issues/16737)) ([98fe58c](https://github.com/cypress-io/cypress/commit/98fe58cce3dd42fc6ca4616a9ed3c9da7b33794c))
+
+# [@cypress/react-v5.9.0](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.8.1...@cypress/react-v5.9.0) (2021-05-31)
+
+
+### Features
+
+* react-scripts. allow parametrise webpack config path ([#16644](https://github.com/cypress-io/cypress/issues/16644)) ([c618d30](https://github.com/cypress-io/cypress/commit/c618d30f3df99394df5c0b81ea3817caf0a7eaf4))
+
+# [@cypress/react-v5.8.1](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.8.0...@cypress/react-v5.8.1) (2021-05-26)
+
+
+### Bug Fixes
+
+* Prevent mount .wrap command appearing in log ([#16585](https://github.com/cypress-io/cypress/issues/16585)) ([fca9b9a](https://github.com/cypress-io/cypress/commit/fca9b9aeb052db668d054f589d7894fc4f9c6d5a))
+
+# [@cypress/react-v5.8.0](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.7.0...@cypress/react-v5.8.0) (2021-05-21)
+
+
+### Features
+
+* custom webpack config for react/plugins/babel ([#16597](https://github.com/cypress-io/cypress/issues/16597)) ([75c753b](https://github.com/cypress-io/cypress/commit/75c753be0ee302fed3559b633626036905a45c4d)), closes [#16596](https://github.com/cypress-io/cypress/issues/16596)
+
 # [@cypress/react-v5.7.0](https://github.com/cypress-io/cypress/compare/@cypress/react-v5.6.0...@cypress/react-v5.7.0) (2021-05-12)
 
 
